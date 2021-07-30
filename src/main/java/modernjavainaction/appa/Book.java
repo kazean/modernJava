@@ -12,6 +12,8 @@ public class Book {
         Arrays.asList(authors).stream().forEach(a -> {
             System.out.println(a.name());
         });
+        
+        //변경
     }
 
 }
