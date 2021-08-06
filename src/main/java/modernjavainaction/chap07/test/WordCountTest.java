@@ -6,7 +6,6 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import static java.util.stream.Collectors.*;
 public class WordCountTest {
     public static final String SENTENCE =
             " Nel   mezzo del cammin  di nostra  vita "
