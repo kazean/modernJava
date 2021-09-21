@@ -4,12 +4,27 @@ import modernjavainaction.chap10.test.model.Order;
 import modernjavainaction.chap10.test.model.Stock;
 import modernjavainaction.chap10.test.model.Trade;
 
+import java.util.function.*;
+
 import static modernjavainaction.chap10.test.MethodChainingOrderBuilder.*;
 
 public class Main {
     public static void main(String[] args) {
 //        naturalJavaMethod();
         fluentDsl();
+
+        /*
+        Predicate<Integer> t;
+        t.test();
+        Consumer<Integer> c;
+        c.accept();
+        Function<Integer,Integer> f;
+        f.apply();
+        Supplier<Integer> s;
+        s.get();
+        UnaryOperator<Integer> uo;
+        uo.apply();
+        */
     }
 
     public static void naturalJavaMethod(){
