@@ -15,7 +15,6 @@ public class ArithmeticCell extends SimpleCell {
     ArithmeticCell c3 = new ArithmeticCell("C3");
     SimpleCell c2 = new SimpleCell("C2");
     SimpleCell c1 = new SimpleCell("C1");
-
     c1.subscribe(c3::setLeft);
     c2.subscribe(c3::setRight);
 
