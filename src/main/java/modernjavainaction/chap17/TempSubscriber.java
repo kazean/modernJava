@@ -15,6 +15,7 @@ public class TempSubscriber implements Subscriber<TempInfo> {
 
   @Override
   public void onNext(TempInfo tempInfo) {
+    System.out.println("TempSubScriber");
     System.out.println(tempInfo);
     subscription.request(1);
   }

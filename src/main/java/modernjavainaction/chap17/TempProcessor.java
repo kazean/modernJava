@@ -15,6 +15,7 @@ public class TempProcessor implements Processor<TempInfo, TempInfo> {
 
   @Override
   public void onNext(TempInfo temp) {
+    System.out.println("TempProcessor");
     subscriber.onNext(new TempInfo(temp.getTown(), (temp.getTemp() - 32) * 5 / 9));
   }
 
