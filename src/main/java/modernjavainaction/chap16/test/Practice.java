@@ -9,6 +9,9 @@ public class Practice {
     static Executor executor;
 
     public static void main(String[] args) {
+        CompletionStage stage;
+        CompletableFuture<String> tmp;
+
         /*List<String> item = new ArrayList<>();
         item.add("iph");
         item.add("gal");
