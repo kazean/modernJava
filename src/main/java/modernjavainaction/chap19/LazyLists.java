@@ -6,8 +6,8 @@ import java.util.function.Supplier;
 public class LazyLists {
 
   public static void main(String[] args) {
+    /*
     MyList<Integer> l = new MyLinkedList<>(5, new MyLinkedList<>(10, new Empty<>()));
-
     System.out.println(l.head());
 
     LazyList<Integer> numbers = from(2);
@@ -18,12 +18,13 @@ public class LazyLists {
 
     numbers = from(2);
     int prime_two = primes(numbers).head();
+//    int prime_two_head = primes(numbers).head().head() X
     int prime_three = primes(numbers).tail().head();
     int prime_five = primes(numbers).tail().tail().head();
     System.out.println(prime_two + " " + prime_three + " " + prime_five);
-
+    */
     // 자바는 꼬리 호출 제거 기능이 없으므로 스택오버플로가 발생할 때까지 실행됨
-    // printAll(primes(from(2)));
+     printAll(primes(from(2)));
   }
 
   interface MyList<T> {
@@ -119,23 +120,45 @@ public class LazyLists {
     @Override
     public MyList<T> filter(Predicate<T> p) {
       return isEmpty() ? this : p.test(head()) ? new LazyList<>(head(), () -> tail().filter(p)) : tail().filter(p);
+      /*
+      if(isEmpty()){
+        System.out.println("return this");
+        return this;
+      }else{
+        if(p.test(head())){
+          System.out.println("new head > " +head());
+          return new LazyList<>(head(),()->tail().filter(p));
+        }else{
+          System.out.println("tail.filter(p) not new");
+          System.out.println("not new head > " + head());
+          return tail().filter(p);
+        }
+      }
+      */
     }
 
   }
 
   public static LazyList<Integer> from(int n) {
+//    System.out.println("from n > " +n);
     return new LazyList<Integer>(n, () -> from(n + 1));
   }
 
   public static MyList<Integer> primes(MyList<Integer> numbers) {
+//    System.out.println("prime head > " + numbers.head());
     return new LazyList<>(numbers.head(), () -> primes(numbers.tail().filter(n -> n % numbers.head() != 0)));
   }
 
+  static int cnt=0;
   static <T> void printAll(MyList<T> numbers) {
     if (numbers.isEmpty()) {
       return;
     }
     System.out.println(numbers.head());
+    if(cnt >10){
+      return;
+    }
+    cnt++;
     printAll(numbers.tail());
   }
 

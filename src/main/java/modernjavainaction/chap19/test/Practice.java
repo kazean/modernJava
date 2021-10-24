@@ -2,6 +2,7 @@ package modernjavainaction.chap19.test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Practice {
     public static void main(String[] args) {
@@ -34,6 +35,7 @@ public class Practice {
         System.out.println(c.getLeft().getLeft().val);
         a.getLeft().getLeft().val = 2;
         System.out.println(c.getLeft().getLeft().val);
+
     }
 }
 
