@@ -10,13 +10,14 @@ public class LazyLists {
     MyList<Integer> l = new MyLinkedList<>(5, new MyLinkedList<>(10, new Empty<>()));
     System.out.println(l.head());
 
-    LazyList<Integer> numbers = from(2);
     int two = numbers.head();
     int three = numbers.tail().head();
     int four = numbers.tail().tail().head();
     System.out.println(two + " " + three + " " + four);
-
+    */
+    LazyList<Integer> numbers = from(2);
     numbers = from(2);
+    /*
     int prime_two = primes(numbers).head();
 //    int prime_two_head = primes(numbers).head().head() X
     int prime_three = primes(numbers).tail().head();
@@ -24,7 +25,12 @@ public class LazyLists {
     System.out.println(prime_two + " " + prime_three + " " + prime_five);
     */
     // 자바는 꼬리 호출 제거 기능이 없으므로 스택오버플로가 발생할 때까지 실행됨
-     printAll(primes(from(2)));
+//     printAll(primes(from(2)));
+    System.out.println(primes(numbers).head());
+    System.out.println(primes(numbers).tail().head());
+    System.out.println(primes(numbers).tail().tail().head());
+    System.out.println(primes(numbers).tail().tail().tail().head());
+    System.out.println(primes(numbers).tail().tail().tail().tail().head());
   }
 
   interface MyList<T> {
