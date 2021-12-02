@@ -13,7 +13,6 @@ public class StreamBasic {
   public static void main(String... args) {
     // 자바 7
     getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
-
     System.out.println("---");
 
     // 자바 8
