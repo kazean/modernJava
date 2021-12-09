@@ -9,3 +9,5 @@ inline,modernjavainaction/chap07/ParallelStreamBenchmark.parallelSum
 inline,modernjavainaction/chap07/ParallelStreamBenchmark.rangedSum
 inline,modernjavainaction/chap07/ParallelStreamBenchmark.sequentialSum
 inline,modernjavainaction/chap07/ParallelStreamBenchmark.tearDown
+inline,modernjavainaction/chap07/test02/JmhTest.parallelSum
+inline,modernjavainaction/chap07/test02/JmhTest.tearDown
