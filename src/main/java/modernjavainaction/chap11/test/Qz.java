@@ -5,6 +5,7 @@ import modernjavainaction.chap11.Insurance;
 import modernjavainaction.chap11.Person;
 
 import java.util.Optional;
+import java.util.Properties;
 
 public class Qz {
     public static void main(String[] args) {
@@ -27,5 +28,19 @@ public class Qz {
                 .flatMap(Car::getInsurance)
                 .map(Insurance::getName)
                 .orElse("Unknown");
+    }
+
+//    qz11-3
+    public int readDuration(Properties props, String name){
+        return Optional.ofNullable(props.getProperty(name))
+                .flatMap(OptionalUtility::stringToInt)
+                .filter(i->i>0)
+                .orElse(0);
+    }
+
+    static class OptionalUtility{
+        public static Optional<Integer> stringToInt(String str){
+            return Optional.of(str).map(s->Integer.parseInt(s));
+        }
     }
 }
