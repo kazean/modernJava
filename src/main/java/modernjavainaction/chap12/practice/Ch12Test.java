@@ -16,11 +16,11 @@ import static java.time.temporal.TemporalAdjusters.*;
 
 public class Ch12Test {
     public static void main(String[] args) {
-//        localdate();
+        localdate();
 //        instant();
 //        durationAndPeriod();
 //        localdateAdjuster();
-        zoneId();
+//        zoneId();
     }
 
     public static void zoneId(){
